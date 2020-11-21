@@ -4,7 +4,7 @@ import pathlib
 from pprint import pprint
 
 port_lowerRange = "50000"
-port_upperRange = "50009"
+port_upperRange = "50019"
 
 data_path = str(pathlib.Path().absolute()) + "/../Data/Raw/"
 print(data_path)

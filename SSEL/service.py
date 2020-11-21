@@ -138,7 +138,7 @@ def inputHandler(text):
 
 	if len(split) == 0: 
 		return False
-	elif len(split) == 2:
+	elif len(split) >= 2:
 		balance = check_balance()
 
 		if split[0] == client_name:
