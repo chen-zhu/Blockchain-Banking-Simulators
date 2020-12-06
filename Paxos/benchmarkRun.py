@@ -14,10 +14,6 @@ if '.DS_Store' in arr:
 port_lowerRange = "50000"
 port_upperRange = str(int(port_lowerRange) + size_check - 1)
 
-#*****Run Blockchain Server*****
-command = "osascript -e 'tell application \"Terminal\" to do script \"cd " + str(pathlib.Path().absolute()) + " && python3 ./blockchain.py " + port_lowerRange + " " + port_upperRange + " \"' "
-os.system(command)
-
 #*****Run Client Servers *****
 for file_name in os.listdir(data_path): 
 	if file_name == ".DS_Store":

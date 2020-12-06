@@ -119,7 +119,7 @@ class MSGHandler(object):
 			Verify(received_data[0], received_data[1], received_data[2])
 
 def ear():
-	s = zerorpc.Server(MSGHandler())
+	s = zerorpc.Server(MSGHandler(), pool_size=1000, heartbeat=None)
 	s.bind("tcp://0.0.0.0" + ":" + str(client_port))
 	s.run()
 
@@ -138,7 +138,7 @@ def inputHandler(text):
 
 	if len(split) == 0: 
 		return False
-	elif len(split) == 2:
+	elif len(split) >= 2:
 		balance = check_balance()
 
 		if split[0] == client_name:
