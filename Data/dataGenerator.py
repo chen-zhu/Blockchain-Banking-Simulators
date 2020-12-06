@@ -5,9 +5,13 @@ import time
 import os
 import numpy as np
 
+#Change these two fields to modify trx data file! 
+client_count = 10
+log_sizePerClient = 200
+
+#DO NOT touch 50000 !!!!!
 port_lowerRange = 50000
-port_upperRange = 50009
-log_sizePerClient = 50
+port_upperRange = port_lowerRange + client_count - 1
 
 fake_clientName = []
 

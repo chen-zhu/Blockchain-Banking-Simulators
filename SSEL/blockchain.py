@@ -69,7 +69,7 @@ def Elect():
 
 
 def ear(): 
-	s = zerorpc.Server(blockChain())
+	s = zerorpc.Server(blockChain(), pool_size=1000, heartbeat=None)
 	s.bind(blockChainAddress)
 	s.run()
 

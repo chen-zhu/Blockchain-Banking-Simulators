@@ -3,12 +3,16 @@ import os
 import pathlib
 from pprint import pprint
 
-port_lowerRange = "50000"
-port_upperRange = "50009"
-
 data_path = str(pathlib.Path().absolute()) + "/../Data/Raw/"
 print(data_path)
 arr = os.listdir(data_path)
+
+size_check = len(arr)
+if '.DS_Store' in arr: 
+	size_check -= 1
+
+port_lowerRange = "50000"
+port_upperRange = str(int(port_lowerRange) + size_check - 1)
 
 #*****Run Client Servers *****
 for file_name in os.listdir(data_path): 
